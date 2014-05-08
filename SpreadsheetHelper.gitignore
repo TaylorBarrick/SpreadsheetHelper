@@ -1,2 +1,7 @@
 /*.suo
 .nuget
+/SpreadsheetHelper/bin
+/SpreadsheetHelper/obj
+/SpreadsheetHelper.Test/bin
+/SpreadsheetHelper.Test/obj
+*.vspscc
