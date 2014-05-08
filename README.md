@@ -37,7 +37,7 @@ Usage
         		[DisplayWidth(50)]
         		public string LongString { get; set; }
     
-    		    [DisplayWidth(10), DisplayName("IssueDate")]
+        		[DisplayWidth(10), DisplayName("IssueDate")]
         		public DateTime BadlyNamed { get; set; }
         		
         		[DisplayHide]
@@ -48,5 +48,5 @@ Usage
 
 		List<POCO> tcs = RetrievePOCOs();
 		Spreadsheet doc = new Spreadsheet();
-        	doc.CreateAndAppendWorksheet<POCO>(tcs);
-        	doc.Save("somefilename.xlsx");
+		doc.CreateAndAppendWorksheet<POCO>(tcs);
+		doc.Save("somefilename.xlsx");
