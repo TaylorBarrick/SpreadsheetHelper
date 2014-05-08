@@ -11,14 +11,25 @@ using SpreadsheetLight;
 using System.IO;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 
 namespace SpreadsheetHelper
 {
     public class Spreadsheet : IDisposable
     {
-        private SLDocument doc;
+        internal SLDocument doc;
+        /// <summary>
+        /// Initializes an instance of Spreadsheet.
+        /// </summary>
         public Spreadsheet() { doc = new SLDocument(); }
         private string FirstSheet = "";
+        /// <summary>
+        /// Creates a worksheet for the Spreadsheet Document of the 
+        /// </summary>
+        /// <typeparam name="T">Type of object to represent in the worksheet</typeparam>
+        /// <param name="records">List of the records to add to the worksheet</param>
+        /// <param name="tabName">Name for the worksheet tab.  Pasing nothing will result in {TypeName}List. </param>
+        /// <param name="makeTable">Will create a table for the records.</param>
         public void CreateAndAppendWorksheet<T>(IEnumerable<T> records, string tabName = "", bool makeTable = true)
         {
             Type t = typeof(T);
@@ -31,7 +42,7 @@ namespace SpreadsheetHelper
             if (FirstSheet == "")
                 FirstSheet = tabName;
 
-            List<PropertyInfo> properties = GetOrderedProperties(t);
+            List<PropertyInfo> properties = OrderProperties(t);
             List<int> hideColumns = new List<int>();
             int propertyCount = properties.Count;
             Type[] propertyTypes = new Type[propertyCount];
@@ -56,7 +67,7 @@ namespace SpreadsheetHelper
             FormatColumns(properties, records, makeTable, hideColumns, wrapAttributes, widthAttributes);
         }
 
-        private List<PropertyInfo> GetOrderedProperties(Type t)
+        internal List<PropertyInfo> OrderProperties(Type t)
         {
             PropertyInfo[] propArray = t.GetProperties();
             var orderedProps = propArray
@@ -76,23 +87,29 @@ namespace SpreadsheetHelper
             return properties;
         }
 
+        /// <summary>
+        /// MimeType for use is email delivery
+        /// </summary>
         [ExcludeFromCodeCoverageAttribute]   
         public static string MimeTypeName { get { return "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"; } }
+        /// <summary>
+        /// Saves the file to the file system.
+        /// </summary>
+        /// <param name="fileName">Path to save the file.</param>
+        /// <remarks>Throws an ArgumentException if the filename is blank</remarks>
         public void Save(string fileName)
         {
-            if (FirstSheet != "")
-                doc.SelectWorksheet(FirstSheet);
-            doc.SaveAs(fileName);
-        }
-        public void Save(Stream stream)
-        {
-            if (FirstSheet != "")
-                doc.SelectWorksheet(FirstSheet);
-            doc.SaveAs(stream);
-            stream.Position = 0;
+            if (fileName != String.Empty)
+            {
+                if (FirstSheet != "")
+                    doc.SelectWorksheet(FirstSheet);
+                doc.SaveAs(fileName);
+            }
+            else
+                throw new ArgumentException("fileName not supplied to Save Operation.");
         }
 
-        private void CreateHeader(List<PropertyInfo> properties, IEnumerable<int> hideColumns, DisplayNameAttribute[] nameAttributes)
+        internal void CreateHeader(List<PropertyInfo> properties, IEnumerable<int> hideColumns, DisplayNameAttribute[] nameAttributes)
         {
             int columnIndex = 0;
             for (int i = 0; i < properties.Count; i++)
@@ -108,7 +125,7 @@ namespace SpreadsheetHelper
             }
         }
 
-        private void FormatColumns<T>(List<PropertyInfo> properties, IEnumerable<T> records, bool makeTable, IEnumerable<int> hideColumns, DisplayNoWrap[] wrapAttributes, DisplayWidth[] widthAttributes)
+        internal void FormatColumns<T>(List<PropertyInfo> properties, IEnumerable<T> records, bool makeTable, IEnumerable<int> hideColumns, DisplayNoWrap[] wrapAttributes, DisplayWidth[] widthAttributes)
         {
             int skippedColumns = 0;
             int columnIndex = 0;
@@ -138,7 +155,7 @@ namespace SpreadsheetHelper
             }
         }
 
-        private void CreateRows<T>(IEnumerable<T> records, List<PropertyInfo> properties, IEnumerable<int> hideColumns, DisplayFormatAttribute[] formatAttributes, Type[] propertyTypes)
+        internal void CreateRows<T>(IEnumerable<T> records, List<PropertyInfo> properties, IEnumerable<int> hideColumns, DisplayFormatAttribute[] formatAttributes, Type[] propertyTypes)
         {
             int columnIndex = 0;
             int rowIndex = 0;
@@ -243,20 +260,34 @@ namespace SpreadsheetHelper
     }
 
     #region "Display Attributes"
+    /// <summary>
+    /// Attribute used to disable text wrapping in workbook column
+    /// </summary>
     [ExcludeFromCodeCoverageAttribute]
     public class DisplayNoWrap : Attribute { }
-
+    /// <summary>
+    /// Attribute used to exclude a property from a workbook
+    /// </summary>
     [ExcludeFromCodeCoverageAttribute]
     public class DisplayHide : Attribute { }
-
+    /// <summary>
+    /// Attribute used to specify the width of a column in the workbook.
+    /// </summary>
     [ExcludeFromCodeCoverageAttribute]    
     public class DisplayWidth : Attribute
     {
+        /// <summary>
+        /// Initializes an instance of DisplayWidth Attribute.
+        /// </summary>
+        /// <param name="width">Width in pixels of the column</param>
         public DisplayWidth(int width) { this.Width = width; }
         public int Width { get; set; }
     }
     #endregion
 
+    /// <summary>
+    /// Type of object to be passed to workbook in order to represent a clickable link within a workbook.
+    /// </summary>
     public class Hyperlink
     {
         public string Text { get; set; }
