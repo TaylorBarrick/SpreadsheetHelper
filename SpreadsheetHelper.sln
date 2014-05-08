@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpreadsheetHelper", "SpreadsheetHelper\SpreadsheetHelper.csproj", "{8BE73767-5A51-4518-889B-A1F60CF441F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpreadsheetHelper.Test", "SpreadsheetHelper.Test\SpreadsheetHelper.Test.csproj", "{7C67CE9B-E64F-4335-A239-79CB9CBC7BFB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{7F6899C8-165E-4D1E-A6D1-5897DD5F618F}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpreadsheetHelper.Packager1", "SpreadsheetHelper.Packager1\SpreadsheetHelper.Packager1.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BE73767-5A51-4518-889B-A1F60CF441F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BE73767-5A51-4518-889B-A1F60CF441F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BE73767-5A51-4518-889B-A1F60CF441F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BE73767-5A51-4518-889B-A1F60CF441F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C67CE9B-E64F-4335-A239-79CB9CBC7BFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C67CE9B-E64F-4335-A239-79CB9CBC7BFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C67CE9B-E64F-4335-A239-79CB9CBC7BFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C67CE9B-E64F-4335-A239-79CB9CBC7BFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

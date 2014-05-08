@@ -1,0 +1,6 @@
+C:\Users\Taylor.Barrick\Documents\Source\GDSXImp\ContractExporter\Git\ContractExporter\SpreadsheetHelper\bin\Release\SpreadsheetHelper.dll
+C:\Users\Taylor.Barrick\Documents\Source\GDSXImp\ContractExporter\Git\ContractExporter\SpreadsheetHelper\bin\Release\DocumentFormat.OpenXml.dll
+C:\Users\Taylor.Barrick\Documents\Source\GDSXImp\ContractExporter\Git\ContractExporter\SpreadsheetHelper\bin\Release\SpreadsheetLight.dll
+C:\Users\Taylor.Barrick\Documents\Source\GDSXImp\ContractExporter\Git\ContractExporter\SpreadsheetHelper\bin\Release\SpreadsheetLight.xml
+C:\Users\Taylor.Barrick\Documents\Source\GDSXImp\ContractExporter\Git\ContractExporter\SpreadsheetHelper\obj\Release\SpreadsheetHelper.csprojResolveAssemblyReference.cache
+C:\Users\Taylor.Barrick\Documents\Source\GDSXImp\ContractExporter\Git\ContractExporter\SpreadsheetHelper\obj\Release\SpreadsheetHelper.dll

@@ -1,0 +1,10 @@
+C:\Users\Taylor.Barrick\Documents\Source\GDSXImp\ContractExporter\Git\ContractExporter\SpreadsheetHelper.Test\bin\Debug\SpreadsheetHelper.Test.dll
+C:\Users\Taylor.Barrick\Documents\Source\GDSXImp\ContractExporter\Git\ContractExporter\SpreadsheetHelper.Test\bin\Debug\SpreadsheetHelper.Test.pdb
+C:\Users\Taylor.Barrick\Documents\Source\GDSXImp\ContractExporter\Git\ContractExporter\SpreadsheetHelper.Test\bin\Debug\SpreadsheetHelper.dll
+C:\Users\Taylor.Barrick\Documents\Source\GDSXImp\ContractExporter\Git\ContractExporter\SpreadsheetHelper.Test\bin\Debug\SpreadsheetLight.dll
+C:\Users\Taylor.Barrick\Documents\Source\GDSXImp\ContractExporter\Git\ContractExporter\SpreadsheetHelper.Test\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Taylor.Barrick\Documents\Source\GDSXImp\ContractExporter\Git\ContractExporter\SpreadsheetHelper.Test\bin\Debug\SpreadsheetHelper.pdb
+C:\Users\Taylor.Barrick\Documents\Source\GDSXImp\ContractExporter\Git\ContractExporter\SpreadsheetHelper.Test\bin\Debug\SpreadsheetLight.xml
+C:\Users\Taylor.Barrick\Documents\Source\GDSXImp\ContractExporter\Git\ContractExporter\SpreadsheetHelper.Test\obj\Debug\SpreadsheetHelper.Test.csprojResolveAssemblyReference.cache
+C:\Users\Taylor.Barrick\Documents\Source\GDSXImp\ContractExporter\Git\ContractExporter\SpreadsheetHelper.Test\obj\Debug\SpreadsheetHelper.Test.dll
+C:\Users\Taylor.Barrick\Documents\Source\GDSXImp\ContractExporter\Git\ContractExporter\SpreadsheetHelper.Test\obj\Debug\SpreadsheetHelper.Test.pdb
