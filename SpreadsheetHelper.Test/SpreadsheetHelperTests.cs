@@ -12,6 +12,18 @@ namespace SpreadsheetHelper.Test
     [TestClass]
     public class SpreadsheetHelper_Tests
     {
+        List<TestClass> tcs;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            TestClass tc1 = new TestClass() { TestString = "Test" };
+            TestClass tc2 = new TestClass() { TestString = "Test" };
+            tcs = new List<TestClass>() { tc1, tc2 };
+            foreach (string fn in Directory.GetFiles(".", "*testfile.xlsx"))
+                File.Delete(fn);
+        }
+
         [TestMethod]
         public void SpreadsheetHelper()
         {
@@ -22,15 +34,21 @@ namespace SpreadsheetHelper.Test
         [TestMethod]
         public void SpreadsheetHelper_Save()
         {
-            TestClass tc1 = new TestClass() { TestString = "Test" };
-            TestClass tc2 = new TestClass() { TestString = "Test" };
-            List<TestClass> tcs = new List<TestClass>(){tc1,tc2};
-            foreach (string fn in Directory.GetFiles(".","*testfile.xlsx"))
-                File.Delete(fn);
             Spreadsheet doc = new Spreadsheet();
             doc.CreateAndAppendWorksheet<TestClass>(tcs);
-            string filename = string.Format("{0:yyyyMMdd_hhmmss}testfile.xlsx", DateTime.Now);
+            string filename = string.Format("{0:yyyyMMdd_hhmmss}testfile1.xlsx", DateTime.Now);
             doc.Save(filename);
+            Assert.IsTrue(File.Exists(filename));
+        }
+
+        [TestMethod]
+        public void SpreadsheetHelper_SaveStream()
+        {
+            Spreadsheet doc = new Spreadsheet();
+            doc.CreateAndAppendWorksheet<TestClass>(tcs);
+            string filename = string.Format("{0:yyyyMMdd_hhmmss}testfile2.xlsx", DateTime.Now);
+            FileStream stream = new FileStream(filename, FileMode.CreateNew);
+            doc.Save(stream);
             Assert.IsTrue(File.Exists(filename));
         }
 
@@ -45,9 +63,6 @@ namespace SpreadsheetHelper.Test
         [TestMethod, ExpectedException(typeof(ArgumentException))]
         public void SpreadsheetHelper_Save_MissingPath()
         {
-            TestClass tc1 = new TestClass() { TestString = "Test" };
-            TestClass tc2 = new TestClass() { TestString = "Test" };
-            List<TestClass> tcs = new List<TestClass>() { tc1, tc2 };
             Spreadsheet doc = new Spreadsheet();
             doc.CreateAndAppendWorksheet<TestClass>(tcs); 
             doc.Save("");
@@ -56,8 +71,6 @@ namespace SpreadsheetHelper.Test
         [TestMethod]
         public void SpreadsheetHelper_Doc_CreateHeader()
         {
-            TestClass tc1 = new TestClass();
-            List<TestClass> tcs = new List<TestClass>() { tc1 };
             Spreadsheet doc = new Spreadsheet();
             doc.CreateAndAppendWorksheet<TestClass>(tcs);
             PropertyInfo[] props = typeof(TestClass).GetProperties();

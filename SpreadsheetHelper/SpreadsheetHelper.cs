@@ -109,6 +109,13 @@ namespace SpreadsheetHelper
                 throw new ArgumentException("fileName not supplied to Save Operation.");
         }
 
+        public void Save(Stream stream)
+        {
+            if (FirstSheet != "")
+                doc.SelectWorksheet(FirstSheet);
+            doc.SaveAs(stream);
+        }
+
         internal void CreateHeader(List<PropertyInfo> properties, IEnumerable<int> hideColumns, DisplayNameAttribute[] nameAttributes)
         {
             int columnIndex = 0;
