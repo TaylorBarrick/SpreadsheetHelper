@@ -33,7 +33,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\$configuration$\$id$.dll" target="lib" />
-    <file src="bin\$configuration$\DocumentFormat.OpenXml.dll" target="lib" />
+    <file src="bin\$configuration$\$id$.dll" target="lib\net40" />
+    <file src="bin\$configuration$\DocumentFormat.OpenXml.dll" target="lib\net40" />
   </files>
 </package>
