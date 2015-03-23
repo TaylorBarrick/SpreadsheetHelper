@@ -1,17 +1,13 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using SpreadsheetLight;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Reflection;
-using System.Globalization;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.InteropServices;
-using SpreadsheetLight;
-using System.IO;
-using DocumentFormat.OpenXml.Spreadsheet;
 using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 
 namespace SpreadsheetHelper
 {
@@ -191,12 +187,13 @@ namespace SpreadsheetHelper
                             {
                                 if (properties[j].PropertyType == typeof(DateTime))
                                 {
-                                    if ((DateTime)value != DateTime.MinValue)
+                                    DateTime dateTimeValue = (DateTime)value;
+                                    if (dateTimeValue != DateTime.MinValue)
                                     {
                                         if (formatAttributes[j] != null)
-                                            doc.SetCellValue(x, y, ((DateTime)value).ToString(formatAttributes[j].DataFormatString));
+                                            doc.SetCellValue(x, y, dateTimeValue.ToString(formatAttributes[j].DataFormatString));
                                         else
-                                            doc.SetCellValue(x, y, ((DateTime)value).ToString("M/dd"));
+                                            doc.SetCellValue(x, y, dateTimeValue.ToString("M/dd"));
                                     }
                                 }
                                 else if (properties[j].PropertyType == typeof(Hyperlink))
@@ -206,10 +203,10 @@ namespace SpreadsheetHelper
                                     switch (hyperLink.Type)
                                     {
                                         case Hyperlink.HyperLinkType.External:
-                                            doc.InsertHyperlink(x, y, SLHyperlinkTypeValues.Url, ((Hyperlink)value).Link, ((Hyperlink)value).Text, "");
+                                            doc.InsertHyperlink(x, y, SLHyperlinkTypeValues.Url, hyperLink.Link, hyperLink.Text, "");
                                             break;
                                         case Hyperlink.HyperLinkType.Internal:
-                                            doc.InsertHyperlink(x, y, SLHyperlinkTypeValues.InternalDocumentLink, ((Hyperlink)value).Link, ((Hyperlink)value).Text, "");
+                                            doc.InsertHyperlink(x, y, SLHyperlinkTypeValues.InternalDocumentLink, hyperLink.Link, hyperLink.Text, "");
                                             break;
                                         default:
                                             throw new NotSupportedException("This hyperlink type has not been implemented yet.");
