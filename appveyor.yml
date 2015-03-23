@@ -11,9 +11,9 @@ build:
   verbosity: minimal
 deploy:
 - provider: NuGet
-  server: https://ci.appveyor.com/nuget/taylorbarrick-1409kb6efow8
+  server: 
   api_key:
-    secure: MaeCYLuU89HPGUPjzEwYOl/7dCytqQ7KnbCgYZXaFOU=
+    secure: o8sI6+HV5NvShFbaFpG0i+TyWA1zONObDS/7eWHomHRwadZGE8jofhnxzlwTEnzR
   skip_symbols: false
 notifications:
 - provider: Email
