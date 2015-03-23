@@ -10,7 +10,7 @@
       .NET Spreadsheet Object Wrapper for SpreadsheetLight
     </description>
     <summary>
-      .NET Spreadsheet Object Wrapper for SpreadsheetLight
+      This assembly will provide attribute based mapping and formatting of classes to spreadsheets using Vincent Tan's Spreadsheet Lite http://spreadsheetlight.com/
     </summary>
     <language>en-US</language>
     <projectUrl>https://github.com/TaylorBarrick/SpreadsheetHelper</projectUrl>
