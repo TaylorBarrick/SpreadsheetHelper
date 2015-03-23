@@ -3,6 +3,8 @@ SpreadsheetHelper
 
 .NET Spreadsheet Object Wrapper for SpreadsheetLight
 
+[![Build status](https://ci.appveyor.com/api/github/webhook?id=8b84sd3ogmtxxxlt?svg=true)](https://ci.appveyor.com/project/TaylorBarrick/spreadsheethelper)
+
 This assembly will provide attribute based mapping and formatting of classes to spreadsheets using Vincent Tan's Spreadsheet Lite http://spreadsheetlight.com/
 
 The primary class Spreadsheet is a wrapper for the SLDocument class.  It exposes the following methods:
