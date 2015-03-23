@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SpreadsheetHelper</id>
+    <version>$version$</version>
+    <title>SpreadsheetHelper</title>
+    <authors>Taylor.Barrick</authors>
+    <owners>Taylor.Barrick</owners>
+    <description>
+      .NET Spreadsheet Object Wrapper for SpreadsheetLight
+    </description>
+    <releaseNotes>
+    </releaseNotes>
+    <summary>
+      .NET Spreadsheet Object Wrapper for SpreadsheetLight
+    </summary>
+    <language>en-US</language>
+    <projectUrl>https://github.com/TaylorBarrick/SpreadsheetHelper</projectUrl>
+    <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <releaseNotes>Building CI Process</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Core" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Data" targetFramework="" />
+      <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework="" />
+    </frameworkAssemblies>
+    <dependencies>
+      <dependency id="SpreadsheetLight" version="3.4.4" />
+    </dependencies>
+  </metadata>
+</package>
