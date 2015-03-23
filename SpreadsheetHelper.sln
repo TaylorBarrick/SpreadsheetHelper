@@ -16,6 +16,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EAE1EE0A-E713-40CE-BCB0-2BE0A2FA02B0}"
 	ProjectSection(SolutionItems) = preProject
 		SpreadsheetHelper.Packager\appveyor.yml = SpreadsheetHelper.Packager\appveyor.yml
+		appveyor.yml = appveyor.yml
 		README.md = README.md
 	EndProjectSection
 EndProject

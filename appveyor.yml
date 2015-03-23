@@ -1,0 +1,25 @@
+version: 1.0.{build}
+configuration: Release
+nuget:
+  account_feed: true
+  project_feed: true
+  disable_publish_on_pr: true
+build:
+  publish_nuget: true
+  publish_nuget_symbols: true
+  include_nuget_references: true
+  verbosity: minimal
+deploy:
+- provider: NuGet
+  server: https://ci.appveyor.com/nuget/taylorbarrick-1409kb6efow8
+  api_key:
+    secure: MaeCYLuU89HPGUPjzEwYOl/7dCytqQ7KnbCgYZXaFOU=
+  skip_symbols: false
+notifications:
+- provider: Email
+  to:
+  - TaylorBarrick@gmail.com
+  subject: Build
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: true
