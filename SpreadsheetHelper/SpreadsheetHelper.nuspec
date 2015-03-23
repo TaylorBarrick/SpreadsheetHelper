@@ -25,7 +25,7 @@
       <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework="" />
     </frameworkAssemblies>
     <references>
-      <reference file="lib\DocumentFormat.OpenXml.dll" />
+      <reference file="DocumentFormat.OpenXml.dll" />
     </references>
     <dependencies>
       <dependency id="SpreadsheetLight" version="3.4.4" />
