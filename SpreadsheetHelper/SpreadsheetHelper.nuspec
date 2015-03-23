@@ -27,8 +27,8 @@
     <dependencies>
       <dependency id="SpreadsheetLight" version="3.4.4" />
     </dependencies>
-    <files>
-      <file src="lib\DocumentFormat.OpenXml.dll" target="lib" />
-    </files>
   </metadata>
+  <files>
+    <file src="lib\DocumentFormat.OpenXml.dll" target="lib" />
+  </files>
 </package>
