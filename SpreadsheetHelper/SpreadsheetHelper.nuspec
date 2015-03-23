@@ -1,24 +1,23 @@
-<?xml version="1.0"?>
-<package >
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>SpreadsheetHelper</id>
     <version>$version$</version>
     <title>SpreadsheetHelper</title>
     <authors>Taylor.Barrick</authors>
     <owners>Taylor.Barrick</owners>
-    <description>
-      .NET Spreadsheet Object Wrapper for SpreadsheetLight
-    </description>
-    <summary>
-      This assembly will provide attribute based mapping and formatting of classes to spreadsheets using Vincent Tan's Spreadsheet Lite http://spreadsheetlight.com/
-    </summary>
-    <language>en-US</language>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
     <projectUrl>https://github.com/TaylorBarrick/SpreadsheetHelper</projectUrl>
     <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <description>.NET Spreadsheet Object Wrapper for SpreadsheetLight</description>
+    <summary>This assembly will provide attribute based mapping and formatting of classes to spreadsheets using Vincent Tan's Spreadsheet Lite http://spreadsheetlight.com/</summary>
     <releaseNotes>Building CI Process</releaseNotes>
     <copyright>Copyright 2015</copyright>
+    <language>en-US</language>
+    <dependencies>
+      <dependency id="SpreadsheetLight" version="3.4.4" />
+    </dependencies>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.Core" targetFramework="" />
       <frameworkAssembly assemblyName="System.Data" targetFramework="" />
@@ -26,14 +25,15 @@
     </frameworkAssemblies>
     <references>
       <reference file="DocumentFormat.OpenXml.dll" />
-      <reference file="$id$.dll" />
+      <reference file="SpreadsheetHelper.dll" />
     </references>
-    <dependencies>
-      <dependency id="SpreadsheetLight" version="3.4.4" />
-    </dependencies>
   </metadata>
   <files>
-    <file src="bin\$configuration$\$id$.dll" target="lib\net40" />
-    <file src="bin\$configuration$\DocumentFormat.OpenXml.dll" target="lib\net40" />
+    <file src="bin\$Configuration$\DocumentFormat.OpenXml.dll" target="lib\net40\DocumentFormat.OpenXml.dll" />
+    <file src="bin\$Configuration$\DocumentFormat.OpenXml.dll" target="lib\net45\DocumentFormat.OpenXml.dll" />
+    <file src="bin\$Configuration$\DocumentFormat.OpenXml.dll" target="lib\net451\DocumentFormat.OpenXml.dll" />
+    <file src="bin\$Configuration$\SpreadsheetHelper.dll" target="lib\net40\SpreadsheetHelper.dll" />
+    <file src="bin\$Configuration$\SpreadsheetHelper.dll" target="lib\net45\SpreadsheetHelper.dll" />
+    <file src="bin\$Configuration$\SpreadsheetHelper.dll" target="lib\net451\SpreadsheetHelper.dll" />
   </files>
 </package>
